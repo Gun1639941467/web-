@@ -1,0 +1,942 @@
+@charset "UTF-8";
+div.tabulation {
+	position: fixed;
+	background-color: #15202f;
+	width: 200px;
+	overflow-y: scroll;
+	left: 150px;
+	top: 50px;
+	bottom: 0px;
+}
+
+span.tabulation {
+	right: 15px;
+	position: absolute;
+	color: white;
+	font-size: 120%;
+}
+
+.tabulation {
+	color: white;
+}
+
+.treeview {
+	height: 25px;
+}
+
+a.tabulation {
+	font-size: 110%;
+}
+
+ul.sec_menu {
+	display: none;
+}
+
+ul.main_menu>li:hover ul.sec_menu {
+	display: block;
+}
+
+.addfriends {
+	position: absolute;
+	top: 150px;
+	left: 250px;
+	width: 500px;
+	height: 250px;
+	border: 1px solid black;
+	display: none;
+	background-color: white;
+}
+
+div.headline {
+	height: 30px;
+	border: 3px solid #009788;
+	border-left: none;
+	border-right: none;
+	background-color: #23262f;
+	line-height: 30px;
+}
+
+img.close {
+	position: absolute;
+	right: 5px;
+	color: white;
+	top: 10px;
+}
+
+span.title {
+	position: absolute;
+	left: 25px;
+	color: white;
+}
+.addfriends {
+	position: absolute;
+	top: 150px;
+	left: 250px;
+	width: 500px;
+	height: 250px;
+	border: 1px solid black;
+	display: none;
+	background-color: white;
+	z-index: 99;
+}
+
+div.headline {
+	height: 30px;
+	border: 3px solid #009788;
+	border-left: none;
+	border-right: none;
+	background-color: #23262f;
+	line-height: 30px;
+}
+
+img.close {
+	position: absolute;
+	right: 5px;
+	color: white;
+	top: 10px;
+}
+
+span.title {
+	position: absolute;
+	left: 25px;
+	color: white;
+}
+
+.searchfriends {
+	border: 3px solid #393b45;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+.account {
+	margin-left: 35px;
+	margin-top: 5px;
+}
+
+.input {
+	margin-top: 8px;
+	margin-left: 35px;
+	margin-bottom: 10px;
+	width: 50%;
+	border: 1px solid green;
+	height: 20px;
+	background-color: #eeeeee;
+}
+
+.head_sculpture {
+	position: relative;
+	top: 25px;
+	left: 25px;
+	width: 80px;
+	height: 80px;
+	
+}
+
+span.acc_info {
+	position: relative;
+	bottom: 25px;
+	left: 30px;
+	font-size: 18px;
+}
+
+span.acc {
+	position: relative;
+	bottom: 25px;
+	left: 30px;
+}
+
+button.addtoFriends {
+	position: absolute;
+	left: 120px;
+	bottom: 25px;
+}
+
+button.find {
+	width: 65px;
+	height: 24px;
+	margin-left: 10px;
+}
+
+button {
+	background-color: #009788;
+	border: 1px solid #009788;
+	color: white;
+}
+.sendfriendrequest {
+	position: absolute;
+	top: 150px;
+	left: 250px;
+	width: 650px;
+	height: 250px;
+	border: 1px solid black;
+	display: none;
+	z-index: 999;
+}
+
+div.headline {
+	height: 30px;
+	border: 3px solid #009788;
+	border-left: none;
+	border-right: none;
+	background-color: #23262f;
+	line-height: 30px;
+}
+
+span.close {
+	position: absolute;
+	right: 5px;
+	color: white;
+}
+
+.account {
+	margin-left: 35px;
+	margin-top: 5px;
+}
+
+
+span.acc_info {
+	bottom: 25px;
+	left: 30px;
+}
+
+span.acc {
+	bottom: 25px;
+	left: 30px;
+}
+
+button {
+	background-color: #009788;
+	border: 1px solid #009788;
+	color: white;
+}
+
+div.friendinfo {
+	position: absolute;
+	bottom: 0px;
+	top: 36px;
+	width: 130px;
+	text-align: center;
+	background-color: #f2f2f2;
+}
+
+div.friend_invitation {
+	position: absolute;
+	left: 131px;
+	right: 0px;
+	line-height: 214px;
+	text-align: center;
+}
+
+button.finish {
+	position: absolute;
+	right: 25px;
+	bottom: 25px;
+	height: 30px;
+	font-size: 15px;
+	width: 65px;
+}
+
+img.close {
+	position: absolute;
+	right: 5px;
+	color: white;
+	top: 10px;
+}
+.friend_head{
+	position: relative;
+	top:25px;
+	left: 25px;
+}
+.confirmfriendrequest {
+	position: absolute;
+	top: 150px;
+	left: 250px;
+	width: 650px;
+	height: 200px;
+	border: 1px solid black;
+	top: 150px;
+	z-index: 999;
+	display: none;
+}
+
+div.headline {
+	height: 30px;
+	border: 3px solid #009788;
+	border-left: none;
+	border-right: none;
+	background-color: #23262f;
+	line-height: 30px;
+}
+
+span.close {
+	position: absolute;
+	right: 5px;
+	color: white;
+}
+
+button {
+	background-color: #009788;
+	border: 1px solid #009788;
+	color: white;
+}
+
+img.add_friend_head {
+	width: 74px;
+	margin-top: 25px;
+	height: 74px;
+	margin-left: 5px;
+}
+
+button.confirm {
+	margin-left: 25px;
+	margin-bottom: 25px;
+	height: 25px;
+	font-size: 15px;
+	width: 65px;
+}
+
+button.cancel {
+	margin-left: 25px;
+	height: 25px;
+	font-size: 15px;
+	width: 65px;
+}
+
+div.friendsinvitation {
+	overflow-y: auto;
+	height: 164px;
+	width: 650px;
+	background-color: white;
+}
+
+div.friendsinvitation>.content {
+	height: 160px;
+	width: 630px;
+}
+
+span.username {
+	font-size: 25px;
+	margin-left: 35px;
+}
+
+span.id {
+	font-size: 16px
+}
+.addfriendresponse {
+	position: absolute;
+	top: 150px;
+	left: 250px;
+	width: 650px;
+	height: 250px;
+	border: 1px solid black;
+	z-index: 999;
+	background-color: white;
+	display: none;
+}
+
+span.title {
+	position: absolute;
+	left: 25px;
+	color: white;
+}
+span.close {
+	position: absolute;
+	right: 5px;
+	color: white;
+}
+
+
+button {
+	background-color: #009788;
+	border: 1px solid #009788;
+	color: white;
+}
+
+div.addfriendresponse>.headline {
+	height: 30px;
+	border: 3px solid #009788;
+	border-left: none;
+	border-right: none;
+	background-color: #23262f;
+	line-height: 30px;
+}
+
+
+div.notice>.result {
+    position:absolute;
+	height:214px;
+	width: 130px;
+	text-align: center;
+	background-color: #f2f2f2;
+}
+img.res_friend_head {
+	position:relative;
+	width: 74px;
+	margin-top:25px;
+	
+	height: 74px;
+}
+
+div.notice>.friend_invitation {
+	position: absolute;
+	left: 131px;
+	top:opx;
+	right: 25px;
+	line-height: 214px;
+	text-align: center;
+	
+}
+
+div.friend_invitation>button.finish {
+	position: absolute;
+	right: 25px;
+	bottom: 25px;
+	height: 30px;
+	font-size: 15px;
+	width: 65px;
+}
+
+img.close {
+	position: absolute;
+	right: 5px;
+	color: white;
+	top: 10px;
+}
+div.addfriendresponse>.friendresponse {
+	overflow-y: auto;
+	height: 210px;
+	width: 650px;
+	
+}
+div.friendresponse>.notice{
+ position:relative;
+    height: 210px;
+	width: 630px;
+	
+}
+
+.solochat {
+	position: absolute;
+	top: 50px;
+	left: 335px;
+	width: 650px;
+	height: 650px;
+	border: 1px solid black;
+	display: none;
+	z-index:55;
+	background: white;
+}
+
+div.chat_headline {
+	height: 30px;
+	border: 3px solid green;
+	border-left: none;
+	border-right: none;
+	background-color: #15202f;
+	text-align: center;
+}
+
+div.solochatmsg {
+	width: 100%;
+	height: 614px;
+	border: 1px solid black;
+	border-left: none;
+	border-right: none border-bottom: none;
+	float: left;
+}
+
+div.showmsg {
+	height: 400px;
+	border: 1px solid black;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	overflow-y: scroll;
+	word-wrap:break-word;
+	
+}
+
+span.chat_title {
+	color: white;
+}
+
+
+div.button {
+	background-color: #d4d9e2;
+	font-size: 0px;
+}
+
+button.send {
+	background-color: green;
+	color: white;
+	position: absolute;
+	bottom: 15px;
+	right: 40px;
+	border: none;
+	height: 25px;
+	width: 55px;
+	border: none;
+}
+
+textarea.typemsg {
+	margin-left: 15px;
+	width: 615px;
+	height: 140px;
+	padding-top: 5px;
+	border: none;
+	outline: none;
+	font-size: 20px;
+}
+
+#showimg {
+	width: 150px;
+	height: 150px;
+}
+
+div.right {
+	position:relative;
+	text-align :right;
+	overflow: hidden;
+}
+div.left{
+	position:relative;
+	
+   overflow: hidden;
+	
+}
+span.sender{
+margin-top: 55px;
+}
+img.img{
+ vertical-align:top;
+ max-width: 300px;
+ max-height: 300px;
+
+}
+.deleteFriendPanel {
+	position: absolute;
+	top: 150px;
+	left: 250px;
+	width: 550px;
+	height: 220px;
+	border: 1px solid black;
+	z-index: 999;
+	background-color: white;
+	display: none;
+}
+
+span.title {
+	position: absolute;
+	left: 25px;
+	color: white;
+}
+
+div.deleteFriendPanel>.headline {
+	height: 30px;
+	border: 3px solid #009788;
+	border-left: none;
+	border-right: none;
+	background-color: #23262f;
+	line-height: 30px;
+}
+
+img.close {
+	position: absolute;
+	right: 5px;
+	color: white;
+	top: 10px;
+}
+
+.prompt {
+	text-align: center;
+}
+
+button.cancelDeleteFriend {
+	position: absolute;
+	right: 150px;
+	bottom: 45px;
+	background-color: #f4c036;
+	border: 1px solid #f4c036;
+	width: 85px;
+	color: black;
+	font-size: 16px;
+}
+
+button.confirmDeleteFriend {
+	position: absolute;
+	right: 55px;
+	bottom: 45px;
+	background-color: #009788;
+	border: 1px solid #009788;
+	color: white;
+	width: 85px;
+	font-size: 16px;
+}
+div.deletefriendbtn{
+	display: none;
+	position: absolute;
+	z-index: 999;
+	
+}
+.createchatroom {
+	position: absolute;
+	top: 150px;
+	left: 250px;
+	width: 600px;
+	height: 450px;
+	border: 1px solid black;
+	display: none;
+	background:white;
+	z-index: 999;
+}
+.deletechatgroup {
+	position: absolute;
+	top: 150px;
+	left: 250px;
+	width: 600px;
+	height: 450px;
+	border: 1px solid black;
+	display: none;
+	background:white;
+	z-index: 999;
+}
+.exitchatgroup{
+	position: absolute;
+	top: 150px;
+	left: 250px;
+	width: 600px;
+	height: 450px;
+	border: 1px solid black;
+	display: none;
+	background:white;
+	z-index: 999;
+}
+
+div.headline {
+	height: 30px;
+	border: 3px solid green;
+	border-left: none;
+	border-right: none;
+	background-color: #15202f;
+}
+
+span.close {
+	position: absolute;
+	right: 5px;
+	color: white;
+}
+
+span.title {
+	position: absolute;
+	left: 25px;
+	color: white;
+}
+
+div.friends {
+	position: absolute;
+	width: 150px;
+}
+
+#leftSelect {
+	padding-left: 15px;
+	width: 200px;
+	border: none;
+	height: 180px;
+	outline: none;
+}
+
+div.selectedfriends {
+	position: absolute;
+	left: 201px;
+	right: 0px;
+}
+
+#rightSelect {
+	padding-left: 15px;
+	width: 100%;
+	border: none;
+	height: 180px;
+	outline: none;
+}
+
+
+
+.chatroomname {
+	border: 1px solid black;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	height: 55px;
+	text-align: center;
+	line-height: 55px;
+}
+
+div.leftprompt {
+	padding-left:15px;
+	width: 200px;
+	background: #d9d9d9;
+}
+
+div.rightprompt {
+	padding-left:15px;
+	background: #eeeeee;
+}
+
+span.presentation {
+	color: #a9a9a9;
+	font-size: 15px;
+}
+
+input.group {
+	border: 1px solid #009788;
+	height: 20px;
+	font-size: 16px;
+	line-height: 20px;
+}
+button.confirmAddtoChatGroup {
+	position: absolute;
+	left: 300px;
+	bottom: 55px;
+	background-color: #f4c036;
+	border: 1px solid #f4c036;
+	width: 85px;
+	color: black;
+	font-size: 16px;
+}
+
+button.cancelAddtoChatGroup {
+	position: absolute;
+	left: 400px;
+	bottom: 55px;
+	background-color: #009788;
+	border: 1px solid #009788;
+	color: white;
+	width: 85px;
+	font-size: 16px;
+}
+.chatroom {
+	position: absolute;
+	top: 50px;
+	left: 335px;
+	width: 700px;
+	height: 650px;
+	border: 1px solid black;
+	z-index: 99;
+	background: white;
+	display: none;
+}
+
+div.headline {
+	height: 30px;
+	border: 3px solid green;
+	border-left: none;
+	border-right: none;
+	background-color: #15202f;
+	text-align: center;
+}
+
+div.msg {
+	width: 500px;
+	height: 614px;
+	border: 1px solid black;
+	border-bottom: none;
+	float: left;
+}
+
+div.showroommsg {
+	height: 400px;
+	border: 1px solid black;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	overflow-y: scroll
+}
+
+span.title {
+	color: white;
+}
+
+span.close {
+	position: absolute;
+	right: 15px;
+	color: white;
+}
+
+div.chatroommemeber {
+	position: absolute;
+	left: 502px;
+	right: 0px;
+	height: 615px;
+}
+
+div.addbtn {
+	padding-top:12px;
+	text-align:center;
+	height: 150px;
+}
+
+div.members {
+	position: absolute;
+}
+
+div.addMembers {
+	padding-left:15px;
+	background-color: #f2f2f2;
+}
+
+
+
+button.sendChatRoomMsg {
+	background-color: green;
+	color: white;
+	position: absolute;
+	bottom: 15px;
+	left: 400px;
+	border: none;
+	height: 25px;
+	width: 55px;
+	border: none;
+}
+
+textarea.typemsg {
+	margin-left: 5px;
+	width: 95%;
+	height: 140px;
+	padding-top: 2px;
+	border: none;
+	outline: none
+}
+.addfriendstochatroom {
+	position: absolute;
+	top: 150px;
+	left: 250px;
+	width: 450px;
+	height: 320px;
+	border: 1px solid black;
+	background: white;
+	z-index: 999;
+	display: none;
+}
+
+div.headline {
+	height: 30px;
+	border: 3px solid green;
+	border-left: none;
+	border-right: none;
+	background-color: #15202f;
+}
+
+span.close {
+	position: absolute;
+	right: 5px;
+	color: white;
+}
+
+span.title {
+	position: absolute;
+	left: 25px;
+	color: white;
+}
+
+div.friends {
+	position: absolute;
+	width: 150px;
+}
+
+#addfriends_leftSelect {
+	padding-left: 15px;
+	width: 150px;
+	border: none;
+	height: 250px;
+}
+
+div.selectedfriends {
+	position: absolute;
+	left: 151px;
+	right: 0px;
+}
+
+#addfriends_rightSelect {
+	padding-left: 15px;
+	width: 100%;
+	border: none;
+	height: 180px;
+}
+button.confirmAddfriends {
+	position: absolute;
+	right: 100px;
+	bottom: 15px;
+	background-color: #f4c036;
+	border: 1px solid #f4c036;
+	width: 85px;
+	color: black;
+	font-size: 16px;
+}
+
+button.cancelAddfriends {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	background-color: #009788;
+	border: 1px solid #009788;
+	color: white;
+	width: 85px;
+	font-size: 16px;
+}
+div.delChatRoomMember{
+	position: absolute;
+	display: none;
+	z-index: 999;
+}
+span.leftmessage{
+	background:  #009788;
+	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+span.rightmessage{
+	background:  #23262f;
+	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+div.leftmessagesender{
+	
+	float:left;
+}
+div.leftmessage{
+	float:left;
+    max-width:300px;
+    color:white;
+    margin-left:5px;
+	background:#009788;
+    word-wrap:break-word;
+    padding-left:5px;
+	padding-right:5px;
+}
+div.rightmessagesender{
+	float:right;
+	right: 10px;
+}
+div.rightmessage{
+	float:right;
+	margin-right:5px;
+	max-width:300px;
+	color:white;
+	background:#009788;
+	padding-bottom:5px;
+	padding-top:5px;
+	padding-left:5px;
+	padding-right:5px;
+	word-wrap:break-word;
+	
+}
+
+::-webkit-scrollbar 
+{ 
+    width: 10px; 
+    height: 16px; 
+    background-color: #F5F5F5; 
+} 
+   

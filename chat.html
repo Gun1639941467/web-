@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="chat.css" /> 
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js" />
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script src="chatFriend.js"></script>
+<script src="chatRoom.js"></script>
+<script src="chatSingle.js"></script>
+<script src="chatGroup.js"></script>
+<script src="chat.js"></script>
+<script type="text/javascript">
+var chat;
+     $(document).ready(
+			function() {
+    		    chat=new Chat("test2");
+    		    chat.init();
+				var Accordion = function(el, multiple) {
+					this.el = el || {};
+					this.multiple = multiple || false;
+					var links = this.el.find('.link');
+					links.on('click', {
+						el : this.el,
+						multiple : this.multiple
+					}, this.dropdown)
+				}
+				Accordion.prototype.dropdown = function(e) {
+					var $el = e.data.el;
+					$this = $(this), $next = $this.next();
+					$next.slideToggle();
+					$this.parent().toggleClass('open');
+					if (!e.data.multiple) {
+						$el.find('.submenu').not($next).slideUp().parent()
+								.removeClass('open');
+					}
+				}
+				var accordion = new Accordion($('#pc_list'), false);
+			});
+	var typemsg = document.getElementById("typemsg");
+	
+	$(document).ready(function(){
+	    
+
+	});
+	$(document).ready(function(){
+	    $('#chatroomimg').click(function(){
+	        $('#uploadimg').click();
+	    });
+	    $('#img').click(function(){
+	        $('#uploadimg').click();
+	    });
+	    $('#vedio').click(function(){
+	    	$('#uploadvedio').click();
+	    });
+
+	});
+	
+
+	function $_(id) {
+		return document.getElementById(id);
+	}
+	function gen_base64(location) {
+		var file = $_('uploadimg').files[0];
+		r = new FileReader(); //本地预览
+		r.onload = function() {
+			var imgBytes=r.result;
+			console.log("location",location);
+			if(location=="solochat"){
+				
+				chat.sendImg(imgBytes);
+			}else if(location=="chatroom"){
+				console.log("location",location);
+				chat.sendroomImg(imgBytes);
+			}
+			
+		}
+		r.readAsDataURL(file); //Base64
+	}
+	function addfriendpanel() {
+		chat.chatFriend.msgBox(1,1);
+	}
+	function find(){
+		chat.chatFriend.findFriend($("#accinfo").val());
+	}
+	function addfriends(){
+		chat.chatFriend.addFriend($("#accinfo").val());
+	}
+	function openDeleteFriendPanel(){
+		chat.chatFriend.msgBox(1,7);
+		chat.chatFriend.msgBox(0,6);
+	}
+</script>
+</head>
+<body>
+<div id="overlay" class="messagecontroller">
+     <div class="addfriendstochatroom" id="addfriendstochatroom">
+		<div class="headline">
+			<span class="title">邀请好友进群</span> 
+			<img src="close.png" class="close"
+				onclick="chat.chatGroup.closeAddFriends()">
+		</div>
+		<div class="friends">
+			<div style="background-color: #d4d9e2;">
+				<span> 待选好友</span>
+			</div>
+			<div>
+				<select id="addfriends_leftSelect" name="leftSelect" size="5">
+				</select>
+			</div>
+		</div>
+		<div class="selectedfriends">
+			<div style="background-color: #d4d9e2;">
+				<span>已选好友</span>
+			</div>
+			<div class="selectpeople">
+				<select id="addfriends_rightSelect" name="rightSelect" size="5">
+				</select>
+			</div>
+
+		</div>
+		<div>
+			<button class="cancelAddfriends" onclick="chat.chatGroup.closeAddFriends()">取消</button>
+			<button class="confirmAddfriends" onclick="chat.chatGroup.confirmAddFriends()">确定</button>
+
+		</div>
+	</div>
+    <div class="chatroom" id="chatroomPanel">
+		<div class="headline">
+			<span class="title" id="chatroomname">haoyou </span> 
+			<img src="close.png" class="close"
+				onclick="chat.chatFriend.msgBox(0,11)">
+		</div>
+		<div class="msg">
+			<div class="showroommsg" id="showroommsg"></div>
+			<div class="button">
+			  <img src="picture/picture.png"  id="chatroomimg" >
+			  <img src="picture/vedio.png" onclick="vedio()">
+			  <img src="picture/music.png" onclick="music()">
+			  <input type="file" id="uploadimg" style="display: none;" onchange="gen_base64('chatroom');" accept="image/*">
+		    </div>
+			<div>
+				<textarea class="typemsg" id="chatroommsg"></textarea>
+				<button class="sendChatRoomMsg" onclick="chat.sendroommsg()">发送</button>
+			</div>
+		</div>
+		<div class="chatroommemeber">
+			<div class="addMembers">添加成员</div>
+			<div class="addbtn">
+				 <img src="picture/addfriendtochatroom.png" 
+				 class="addbtn" onclick="chat.chatGroup.openAddFriends()">
+			</div>
+			<div class="members">
+				<div style="background: #f2f2f2;margin-top: 5px;padding-left: 10px;width:188px;"> 群成员  
+				</div>
+				<div style="margin-top: 8px;margin-left: 10px;"><input id="findChatRoomMember"></div>
+				<div class="roomMembers" >
+					<ul id="roomMembers">
+					  
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="createchatroom" id="createChatGroup">
+		<div class="headline">
+			<span class="title">创建群聊</span> 
+			<img src="close.png" class="close"
+				onclick="chat.chatGroup.closeCreateChatGroup()">
+		</div>
+		<div class="chatroomname">
+			<span style="font-size: 15px;">请输入群聊名称</span> 
+			<input class="group" id="groupname">
+			 <span class="presentation">(名称确定后，将无法更改)</span>
+		</div>
+		<div>
+			<div class="friends">
+				<div class="leftprompt" >
+					<span> 待选好友</span>
+				</div>
+				<div class="leftSelect">
+					<select id="leftSelect" name="leftSelect" size="5">
+					</select>
+				</div>
+			</div>
+			<div class="selectedfriends">
+				<div class="rightprompt">
+					<span>已选好友</span>
+				</div>
+				<div class="selectpeople">
+					<select id="rightSelect" name="rightSelect" size="5">
+					</select>
+				</div>
+			</div>
+			<div>
+				<button class="cancelAddtoChatGroup" onclick="chat.chatGroup.closeCreateChatGroup()">取消</button>
+				<button class="confirmAddtoChatGroup" onclick="chat.chatGroup.createChatGroup()">确定</button>
+			</div>
+		</div>
+	</div>
+    <div class="deleteFriendPanel" id="deleteFriendPanel">
+		<div class="headline">
+			<span class="title">删除好友</span><img src="close.png" class="close"
+				onclick="chat.chatFriend.msgBox(0,7)">
+		</div>
+		<div class="prompt" id="prompt">删除后您将从对方列表中消失，且以后不再接收此人的会话消息。<br>
+		<br>
+		<br>
+		<span id="delete_friend_info"></span>
+		</div>
+		<button class="cancelDeleteFriend" onclick="chat.chatFriend.msgBox(0,7)">取消</button>
+		<button class="confirmDeleteFriend" onclick="chat.chatFriend.deleteFriend()">确认</button>
+	</div> 
+    <div class="addfriendresponse" id="addfriendreponse">
+		<div class="headline">
+			<span class="title">添加好友</span>
+			<img src="close.png" class="close" onclick="chat.chatFriend.msgBox(0,4)">
+		</div>
+		<div class="friendresponse" id="friendresponse">
+		</div>
+	</div>
+	<div id="deletefriendbtn"  class="deletefriendbtn"  >
+	  <button  onclick="openDeleteFriendPanel()"> 删除好友</button>
+    </div>
+    <div id="delChatRoomMember" class="delChatRoomMember">
+       <button  onclick="chat.chatGroup.delChatRoomMember('true')">从本群中删除</button>
+    </div>
+    <div id="deletechatgroup"  class="deletefriendbtn"  >
+	  <button  onclick="chat.chatGroup.deleteChatGroup()"> 删除群聊</button>
+    </div>
+    <div id="exitchatgroup"  class="deletefriendbtn"  >
+	  <button  onclick="chat.chatGroup.exitChatGroup()"> 退出群聊</button>
+    </div>
+    <div class="confirmfriendrequest" id="confirmfriendrequest">
+		<div class="headline">
+			<span class="title">验证消息</span> 
+			<img src="close.png" class="close" onclick="chat.chatFriend.msgBox(0,2)">
+		</div>
+		<div class="friendsinvitation" id="friendsinvitation">
+			
+		</div>
+	</div>
+    <div class="sendfriendrequest" id="sendfriendrequest">
+		<div class="headline">
+			<span class="title">添加好友</span>
+			<img src="close.png" class="close" onclick="chat.chatFriend.msgBox(0,3)">
+		</div>
+		<div class="friendinfo">
+			<img src="head.png" class="add_friend_head"> <br>
+			<span id="friendname" style="font-size: 18px;"> hello</span><br>
+			<span id="friendId">test</span>
+		</div>
+		<div class="friend_invitation">
+		    <img src="ok.png" style=" vertical-align:middle">
+			您的好友添加请求已经发送成功，正在等待对方确认
+		</div>
+           <button class="finish" onclick="chat.chatFriend.msgBox(0,3)">完成</button>
+	</div>
+	<div class="tabulation">
+		<ul id="pc_list">
+			<li id="dpControl" >
+   				<div class="link" >
+   				<span>好友</span>
+   				<!--  <img  src="" onclick="addfriend();">-->
+   				<img alt="" src="addBtn.png" style="position: absolute;
+   				  left: 140px;" onclick="addfriendpanel()">
+   				</div>
+   				<ul class="submenu" id="friends">
+   				</ul>  				
+		   	</li>
+   			<li id="eventList"  class="authority" >
+   				<div class="link">群聊
+   				<img alt="" src="addBtn.png" 
+   				  style="position: absolute;left: 140px;" onclick="chat.chatGroup.openCreateChatGroup()">
+   				  </div>  				
+   				<ul class="submenu" id="chatGroupList">
+   				
+   				</ul>	
+   			</li>
+		</ul>
+	</div>
+	<div class="addfriends" id="addfriends">
+		<div class="headline">
+			<span class="title">添加好友</span><img src="close.png" 
+			   class="close" onclick="chat.chatFriend.msgBox(0,1)">
+		</div>
+		<div class="searchfriends">
+			<button class="account">账号</button>
+			<br> <input class="input"  id="accinfo"/>
+			<button class="find" onclick="find()">查找</button>
+		</div>
+		<div style="background-color: #eeeeee;">
+			<span style="margin-left: 15px;">搜索账号：</span><span id="add_friend_account"></span>
+		</div>
+		<div class="showAccount">
+			<img src="head.png" class="head_sculpture"  id="head_sculpture">
+			 <span class="acc_info" id="realname"></span>
+			 <span id="userid" class="acc"></span>
+			<button class="addtoFriends" id="addFriends_btn" onclick="addfriends()">+ 加为好友</button>
+		</div>
+	</div>
+	<div style="display:none;">
+	   <input id="uploadvedio" type="file"  onchange="chat.upLoadVedio()" />
+	</div>
+	<div class="solochat" id="solochat">
+		<div class="chat_headline">
+			<span class="chat_title" id="chatfriend">haoyou </span> 
+			<img src="close.png" class="close" onclick="chat.chatFriend.msgBox(0,5)">
+		</div>
+		<div class="solochatmsg">
+			<div class="showmsg"  id="showmsg"></div>
+			<div class="button">
+			  <img src="picture/picture.png"  id="img">
+			  <img src="picture/vedio.png" id="vedio" >
+			  <img src="picture/music.png" id="music" onclick="music()">
+			  <input type="file" id="uploadimg" style="display: none;" onchange="gen_base64('solochat');" accept="image/*">
+		    </div>
+		    <div>
+				<textarea class="typemsg" id="typemsg" ></textarea>
+				<button class="send" onclick="chat.sendMessage()">发送</button>
+
+		     </div>
+	      </div>
+	 </div>
+	
+</div>
+</body>
+</html>
